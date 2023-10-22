@@ -1,4 +1,5 @@
 import re
+import json
 import traceback
 
 import jieba
@@ -20,6 +21,8 @@ def formalize_docs(docs: list[str], stop_word_patter: str = '[^\\u4e00-\\u9fa5]'
 
 class TextClassifyModel:
 
+    names: list[str] = []
+
     def __init__(self, vectorizer, feature_selector, classifier, metrics: list):
         self.is_trained = False
 
@@ -31,9 +34,15 @@ class TextClassifyModel:
         self.name = (f"model["
                      f"vectorizer={self.vectorizer.__class__.__qualname__}, "
                      f"feature_selector={self.feature_selector.__class__.__qualname__}({self.feature_selector.score_func.__qualname__}), "
-                     f"classifier={self.classifier.__class__.__qualname__}]")
+                     f"classifier={self.classifier.__class__.__qualname__}]@0")
+        i = 0
+        while self.name in TextClassifyModel.names:
+            self.name = self.name.split("@")[0] + f"@{i}"
+            i += 1
 
-    def train(self, docs, labels, test_size=0.3, ) -> list:
+        TextClassifyModel.names.append(self.name)
+
+    def train(self, docs, labels, test_size=0.3) -> list:
         try:
             print(f"Start Train {self.name}")
             # 向量化
@@ -77,12 +86,19 @@ class TextClassifyModel:
         return models
 
     @staticmethod
-    def train_models(models: list, docs, labels) -> list[list]:
+    def train_models(models: list, docs, labels, log_file_name: str = None) -> list[list]:
         pool = ProcessPoolExecutor()
 
         print("Start Train Models")
         futures: list[Future] = [pool.submit(model.train, docs, labels) for model in models]
         metrics = [future.result() for future in futures]
         print("Finish Training Models")
+
         pool.shutdown()
+
+        if log_file_name is not None:
+            with open(f'./log/{log_file_name}.json', 'w') as f:
+                log = {models[i].name: metrics[i] for i in range(len(models))}
+                json.dump(log, f, indent=4)
+
         return metrics

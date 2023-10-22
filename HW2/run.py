@@ -10,10 +10,19 @@ from util import TextClassifyModel, formalize_docs
 LABEL_HAM = 0
 LABEL_SPAM = 1
 
-model_configs = {
+# 比较模型间的精度
+model_configs_1 = {
     'vectorizer': [CountVectorizer(ngram_range=(1, 1)), TfidfVectorizer(ngram_range=(1, 1))],
     'feature_selector': [SelectKBest(score_func=chi2, k=10), SelectKBest(score_func=mutual_info_classif, k=10)],
     'classifier': [MultinomialNB(), SGDClassifier(loss='hinge')],
+    'metrics': [metrics.accuracy_score, metrics.recall_score, metrics.precision_score]
+}
+
+# 看k与精度的关系
+model_configs_2 = {
+    'vectorizer': [TfidfVectorizer(ngram_range=(1, 1))],
+    'feature_selector': [SelectKBest(score_func=chi2, k=k) for k in range(1000)[10::20]],
+    'classifier': [SGDClassifier(loss='hinge')],
     'metrics': [metrics.accuracy_score, metrics.recall_score, metrics.precision_score]
 }
 
@@ -32,8 +41,10 @@ if __name__ == '__main__':
 
     docs = formalize_docs(docs)
 
-    models = TextClassifyModel.build_from_config(model_configs)
-    metrics = TextClassifyModel.train_models(models, docs, labels)
+    models_1 = TextClassifyModel.build_from_config(model_configs_1)
+    metrics_1 = TextClassifyModel.train_models(models_1, docs, labels, log_file_name='configs_1')
 
-    print(metrics)
+    models_2 = TextClassifyModel.build_from_config(model_configs_2)
+    metrics_2 = TextClassifyModel.train_models(models_2, docs, labels, log_file_name='config_2')
 
+    print(metrics_2)
