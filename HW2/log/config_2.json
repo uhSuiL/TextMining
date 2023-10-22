@@ -1,252 +1,302 @@
 {
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@0": [
+        0.7670776407864045,
+        0.5501981505944518,
+        0.9788484136310224,
+        0.7044397463002116
+    ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@1": [
-        0.7674108630456514,
-        0.5508586525759577,
-        0.9788732394366197
+        0.8320559813395535,
+        0.6737120211360634,
+        0.9902912621359223,
+        0.8018867924528301
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@2": [
-        0.8353882039320226,
-        0.6809775429326288,
-        0.989443378119002
+        0.8760413195601466,
+        0.7642007926023778,
+        0.9872013651877133,
+        0.8615040953090097
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@3": [
-        0.8750416527824059,
-        0.760898282694848,
-        0.9888412017167382
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@4": [
         0.9090303232255915,
         0.8335535006605019,
-        0.9836321122369447
+        0.9836321122369447,
+        0.9023954236682159
     ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@5": [
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@4": [
         0.9206931022992336,
         0.8599735799207398,
-        0.9804216867469879
+        0.9804216867469879,
+        0.916256157635468
     ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@6": [
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@5": [
         0.9556814395201599,
         0.9531043593130779,
-        0.9588039867109635
+        0.9588039867109635,
+        0.9559456773766147
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@6": [
+        0.9630123292235921,
+        0.9676354029062088,
+        0.9593975114603799,
+        0.9634988490628082
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@7": [
-        0.9626791069643452,
-        0.9682959048877147,
-        0.9581699346405229
+        0.963678773742086,
+        0.964332892998679,
+        0.9636963696369637,
+        0.964014526246286
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@8": [
-        0.9626791069643452,
-        0.9663143989431968,
-        0.9599737532808399
+        0.9633455514828391,
+        0.9630118890356671,
+        0.9642857142857143,
+        0.9636483807005949
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@9": [
-        0.9620126624458514,
-        0.9630118890356671,
-        0.9617414248021108
+        0.963678773742086,
+        0.9709379128137384,
+        0.9576547231270358,
+        0.964250573958675
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@10": [
-        0.9630123292235921,
-        0.9696169088507266,
-        0.9575994781474233
+        0.9650116627790737,
+        0.9715984147952443,
+        0.95955642530985,
+        0.9655398752871678
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@11": [
-        0.9656781072975674,
-        0.9702774108322325,
-        0.9620170268500328
+        0.9660113295568143,
+        0.9689564068692206,
+        0.9638633377135348,
+        0.9664031620553359
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@12": [
-        0.9653448850383206,
-        0.9715984147952443,
-        0.9601827676240209
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@13": [
         0.9660113295568143,
         0.9715984147952443,
-        0.961437908496732
+        0.961437908496732,
+        0.966491458607096
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@13": [
+        0.9686771076307897,
+        0.9709379128137384,
+        0.9671052631578947,
+        0.9690177982860909
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@14": [
         0.9690103298900367,
         0.9709379128137384,
-        0.967741935483871
+        0.967741935483871,
+        0.9693372898120671
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@15": [
-        0.9696767744085305,
-        0.9702774108322325,
-        0.9696369636963696
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@16": [
         0.9713428857047651,
+        0.9715984147952443,
         0.9715984147952443,
         0.9715984147952443
     ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@17": [
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@16": [
         0.9726757747417527,
-        0.9722589167767504,
-        0.9735449735449735
+        0.9715984147952443,
+        0.9741721854304636,
+        0.9728835978835979
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@17": [
+        0.9730089970009996,
+        0.9735799207397622,
+        0.972937293729373,
+        0.973258501155497
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@18": [
-        0.9730089970009996,
-        0.9742404227212682,
-        0.972313777191826
+        0.9750083305564812,
+        0.976882430647292,
+        0.9736668861092824,
+        0.9752720079129575
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@19": [
-        0.9750083305564812,
-        0.97556142668428,
-        0.974917491749175
+        0.9763412195934689,
+        0.9782034346103038,
+        0.9749835418038183,
+        0.9765908341575997
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@20": [
-        0.9766744418527158,
+        0.9780073308897035,
         0.9782034346103038,
-        0.9756258234519104
+        0.9782034346103038,
+        0.9782034346103037
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@21": [
-        0.9776741086304566,
-        0.9788639365918098,
-        0.976928147659855
+        0.9780073308897035,
+        0.9782034346103038,
+        0.9782034346103038,
+        0.9782034346103037
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@22": [
-        0.9780073308897035,
+        0.9776741086304566,
         0.9782034346103038,
-        0.9782034346103038
+        0.9775577557755776,
+        0.9778804886101022
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@23": [
-        0.9770076641119627,
+        0.9783405531489503,
         0.9795244385733157,
-        0.9750164365548981
+        0.977587343441002,
+        0.9785549323655559
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@24": [
-        0.9780073308897035,
-        0.9782034346103038,
-        0.9782034346103038
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@25": [
-        0.9776741086304566,
-        0.97556142668428,
-        0.980092899800929
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@26": [
-        0.9786737754081972,
-        0.976882430647292,
-        0.9807692307692307
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@27": [
         0.9783405531489503,
         0.9782034346103038,
-        0.9788499669530734
+        0.9788499669530734,
+        0.9785265939874463
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@25": [
+        0.9786737754081972,
+        0.976882430647292,
+        0.9807692307692307,
+        0.9788219722038385
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@26": [
+        0.9790069976674441,
+        0.9782034346103038,
+        0.9801455989410987,
+        0.9791735537190083
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@27": [
+        0.9780073308897035,
+        0.9782034346103038,
+        0.9782034346103038,
+        0.9782034346103037
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@28": [
-        0.9786737754081972,
-        0.9782034346103038,
-        0.9794973544973545
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@29": [
         0.9790069976674441,
         0.9788639365918098,
-        0.9795109054857898
+        0.9795109054857898,
+        0.979187314172448
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@29": [
+        0.9793402199266911,
+        0.9782034346103038,
+        0.980794701986755,
+        0.9794973544973545
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@30": [
         0.9790069976674441,
         0.9782034346103038,
-        0.9801455989410987
+        0.9801455989410987,
+        0.9791735537190083
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@31": [
-        0.979673442185938,
-        0.9782034346103038,
-        0.9814446653412856
+        0.9800066644451849,
+        0.9801849405548216,
+        0.9801849405548216,
+        0.9801849405548215
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@32": [
-        0.979673442185938,
+        0.9806731089636788,
         0.9808454425363277,
-        0.978905735003296
+        0.9808454425363277,
+        0.9808454425363277
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@33": [
         0.9813395534821726,
-        0.9821664464993395,
-        0.9808707124010554
+        0.9828269484808454,
+        0.9802371541501976,
+        0.9815303430079155
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@34": [
-        0.9810063312229257,
+        0.9823392202599134,
         0.9801849405548216,
-        0.9821310390469887
+        0.9847378898473789,
+        0.9824561403508772
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@35": [
-        0.9830056647784072,
+        0.9820059980006665,
         0.9821664464993395,
-        0.9841164791528789
+        0.9821664464993395,
+        0.9821664464993395
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@36": [
-        0.9833388870376542,
+        0.9826724425191603,
         0.9821664464993395,
-        0.9847682119205298
+        0.9834656084656085,
+        0.9828155981493721
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@37": [
-        0.9830056647784072,
-        0.9821664464993395,
-        0.9841164791528789
+        0.9816727757414195,
+        0.9815059445178336,
+        0.9821546596166556,
+        0.9818301949124546
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@38": [
         0.9816727757414195,
         0.9815059445178336,
-        0.9821546596166556
+        0.9821546596166556,
+        0.9818301949124546
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@39": [
         0.9816727757414195,
         0.9815059445178336,
-        0.9821546596166556
+        0.9821546596166556,
+        0.9818301949124546
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@40": [
         0.9816727757414195,
-        0.9815059445178336,
-        0.9821546596166556
+        0.9821664464993395,
+        0.9815181518151815,
+        0.9818421921426214
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@41": [
         0.9816727757414195,
         0.9821664464993395,
-        0.9815181518151815
+        0.9815181518151815,
+        0.9818421921426214
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@42": [
-        0.9816727757414195,
-        0.9821664464993395,
-        0.9815181518151815
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@43": [
         0.9826724425191603,
         0.9834874504623514,
-        0.9821899736147758
+        0.9821899736147758,
+        0.9828382838283829
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@43": [
+        0.9823392202599134,
+        0.9828269484808454,
+        0.9821782178217822,
+        0.9825024760647079
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@44": [
         0.9823392202599134,
         0.9828269484808454,
-        0.9821782178217822
+        0.9821782178217822,
+        0.9825024760647079
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@45": [
-        0.9823392202599134,
+        0.9836721092969011,
         0.9828269484808454,
-        0.9821782178217822
+        0.984778292521509,
+        0.9838016528925619
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@46": [
         0.9836721092969011,
         0.9828269484808454,
-        0.984778292521509
+        0.984778292521509,
+        0.9838016528925619
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@47": [
         0.9833388870376542,
-        0.9834874504623514,
-        0.9834874504623514
+        0.9828269484808454,
+        0.9841269841269841,
+        0.9834765366820887
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@48": [
-        0.9833388870376542,
+        0.984005331556148,
         0.9828269484808454,
-        0.9841269841269841
+        0.9854304635761589,
+        0.984126984126984
     ],
     "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@49": [
         0.9836721092969011,
-        0.9828269484808454,
-        0.984778292521509
-    ],
-    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@50": [
-        0.984005331556148,
         0.9821664464993395,
-        0.9860742705570292
+        0.9854208084824387,
+        0.9837909361561363
     ]
 }
