@@ -3,6 +3,7 @@
 
 - to install dependent packages: `pip install -r requirements.txt`
 - to run the script: `python run` in the dir `HW2`
+- to get the same plot: `run all cells` in [plot.ipynb](./plot.ipynb)
 
 # Result
 
