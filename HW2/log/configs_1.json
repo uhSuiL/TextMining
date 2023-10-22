@@ -1,0 +1,42 @@
+{
+    "model[vectorizer=CountVectorizer, feature_selector=SelectKBest(chi2), classifier=MultinomialNB]@0": [
+        0.7264245251582806,
+        0.47886393659180976,
+        0.9577278731836195
+    ],
+    "model[vectorizer=CountVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@0": [
+        0.8487170943018993,
+        0.9068692206076618,
+        0.8143534994068802
+    ],
+    "model[vectorizer=CountVectorizer, feature_selector=SelectKBest(mutual_info_classif), classifier=MultinomialNB]@0": [
+        0.7624125291569477,
+        0.5468956406869221,
+        0.968421052631579
+    ],
+    "model[vectorizer=CountVectorizer, feature_selector=SelectKBest(mutual_info_classif), classifier=SGDClassifier]@0": [
+        0.8447184271909364,
+        0.9266842800528402,
+        0.79806598407281
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=MultinomialNB]@0": [
+        0.7294235254915028,
+        0.46961690885072654,
+        0.9875
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(chi2), classifier=SGDClassifier]@0": [
+        0.7687437520826391,
+        0.5535006605019815,
+        0.9789719626168224
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(mutual_info_classif), classifier=MultinomialNB]@0": [
+        0.732755748083972,
+        0.4966974900924703,
+        0.9494949494949495
+    ],
+    "model[vectorizer=TfidfVectorizer, feature_selector=SelectKBest(mutual_info_classif), classifier=SGDClassifier]@0": [
+        0.7347550816394535,
+        0.4986789960369881,
+        0.9532828282828283
+    ]
+}
