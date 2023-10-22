@@ -12,4 +12,4 @@
 
 ## Author: LiuShu
 - contact: `liushu_public@yeah.net`
-## The Project is also saved in [My GitHub](https://github.com/uhSuiL/TextMining/tree/main) where you can give a star
+## The Project is also saved in [My GitHub](https://github.com/uhSuiL/TextMining) where you can give a star
