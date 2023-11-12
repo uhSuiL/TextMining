@@ -23,16 +23,18 @@ def search_k(search_area: tuple, _docs: list[str], plot=True):
 
 	# labels: np.array = [future.result() for future in futures]
 	labels = [model(_docs) for model in models]
-	scores = [
-		silhouette_score(X=model.vectorizer.transform(_docs), labels=_label)
-		for model in models for _label in labels
-	]
-
-	if plot:  # TODO
-		pass
+	scores = [silhouette_score(X=models[i].vectorizer.transform(_docs), labels=labels[i]) for i in range(len(models))]
 
 	_best_k = search_area[np.argmax(scores)]
 	_best_model = models[np.argmax(scores)]
+
+	if plot:
+		plt.ylabel("silhouette_score")
+		plt.xlabel("k")
+		plt.xticks(list(range(*search_area)))
+		plt.plot(list(range(*search_area)), scores)
+		plt.savefig(f'./result/{search_area}-k_is_{_best_k}.png')
+
 	return _best_k, _best_model
 
 
