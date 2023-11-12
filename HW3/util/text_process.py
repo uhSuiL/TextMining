@@ -12,11 +12,7 @@ class TextCluster:
 		self.labels = None
 
 	def __call__(self, docs: list[str]):
-		stop_words: list[str] = TextCluster.load_stopwords()
-
-		docs: list[list[str]] = TextCluster.tokenize(docs)
-		docs = TextCluster.remove_stopwords_and_punc(docs, stop_words)
-
+		docs: list[list[str]] = TextCluster.text_process(docs)
 		docs: list[str] = [" ".join(doc) for doc in docs]
 		labels = self.cluster(docs)
 		self.labels = labels
@@ -24,8 +20,15 @@ class TextCluster:
 
 	def cluster(self, clean_docs: list[str]) -> np.array:
 		vectors = self.vectorizer.fit_transform(clean_docs)
-		self.clusterizer = self.clusterizer.fit(vectors)
-		return self.clusterizer.labels_
+		return self.clusterizer.fit_predict(vectors)
+
+	@staticmethod
+	def text_process(docs) -> list[list[str]]:
+		stop_words: list[str] = TextCluster.load_stopwords()
+
+		docs: list[list[str]] = TextCluster.tokenize(docs)
+		docs = TextCluster.remove_stopwords_and_punc(docs, stop_words)
+		return docs
 
 	@staticmethod
 	def tokenize(docs: list[str]):
