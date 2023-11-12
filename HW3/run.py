@@ -59,8 +59,8 @@ if __name__ == '__main__':
 	table = pd.read_csv('./douban book data/reformat_data.csv')
 	docs = table['content'].tolist()
 
-	best_k, best_model = search_k((int(np.sqrt(len(docs)/2)) - 1, int(np.sqrt(len(docs)/2)) + 1), docs)
-	# best_k, best_model = search_k((6, 9), docs)
+	# best_k, best_model = search_k((int(np.sqrt(len(docs)/2)) - 1, int(np.sqrt(len(docs)/2)) + 1), docs)
+	best_k, best_model = search_k((5, 40), docs)
 	table['cluster_label'] = best_model.labels
 
 	clusters_hot_words = dict()
