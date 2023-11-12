@@ -13,7 +13,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 def search_k(search_area: tuple, _docs: list[str], plot=True):
 	models = [
-		TextCluster(TfidfVectorizer(ngram_range=(1, 1)), KMeans(n_clusters=_k))
+		TextCluster(TfidfVectorizer(ngram_range=(1, 1)), KMeans(n_clusters=_k, n_init=10))
 		for _k in range(*search_area)
 	]
 
@@ -53,6 +53,9 @@ def select_hot_word(words: list[str], top_k: int, have_freq=False) -> list[tuple
 
 
 if __name__ == '__main__':
+	from util import reformat_data
+	reformat_data.run()
+
 	table = pd.read_csv('./douban book data/reformat_data.csv')
 	docs = table['content'].tolist()
 
