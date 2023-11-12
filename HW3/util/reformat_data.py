@@ -31,7 +31,7 @@ def clean_comments(table: pd.DataFrame) -> pd.DataFrame:
 	return table
 
 
-if __name__ == '__main__':
+def run():
 	data = pd.read_csv('../douban book data/data.csv')
 	# title有乱码, 请保证data被转换成了utf-8编码
 	data['title'] = data['title'].apply(lambda row: row.lstrip('?'))
