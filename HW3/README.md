@@ -9,7 +9,7 @@
 
 # Log
 
-- Unsolved: `TF-IDF vectorizer` somehow does not work in multiprocessing, since I've fitted the vectorizer in process but throw bug of not fitted. Changing it to single process works. 
+- <del>Unsolved: `TF-IDF vectorizer` somehow does not work in multiprocessing, since I've fitted the vectorizer in process but throw bug of not fitted. Changing it to single process works. </del>
 
 
 ## Author: LiuShu
