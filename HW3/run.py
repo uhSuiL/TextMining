@@ -25,7 +25,7 @@ def search_k(search_area: tuple, _docs: list[str], plot=True):
 	labels = [model(_docs) for model in models]
 	scores = [silhouette_score(X=models[i].vectorizer.transform(_docs), labels=labels[i]) for i in range(len(models))]
 
-	_best_k = search_area[np.argmax(scores)]
+	_best_k = range(*search_area)[np.argmax(scores)]
 	_best_model = models[np.argmax(scores)]
 
 	if plot:
@@ -46,7 +46,7 @@ def select_hot_word(words: list[str], top_k: int, have_freq=False) -> list[tuple
 		else:
 			freq[word] = 1
 
-	words = sorted(freq.items(), key=lambda x: x[1])
+	words = sorted(freq.items(), key=lambda x: x[1], reverse=True)
 	if not have_freq:
 		words = [word_pair[0] for word_pair in words]
 	return words[:top_k + 1]

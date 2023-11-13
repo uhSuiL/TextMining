@@ -56,7 +56,8 @@ class TextCluster:
 				token = re.sub(punc_pattern, "", token)
 				for stop_word in stop_words:
 					token.replace(stop_word, "")
-				tokens.append(token)
+				if "" != token:
+					tokens.append(token)
 			clean_docs.append(tokens)
 		return clean_docs
 
