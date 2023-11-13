@@ -15,3 +15,6 @@
 ## Author: LiuShu
 - contact: `liushu_public@yeah.net`
 ## The Project is also saved in [My GitHub](https://github.com/uhSuiL/TextMining) where you can give a star
+
+I'm not satisfied with this hw since I finally make it spaghetti code. Maybe ML code doesn't need much encapsulation.
+I will take use of fp more making it easier to read, check intermediate result, explore param and models and strategies. 
