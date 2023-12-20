@@ -43,3 +43,6 @@ class Pipeline(dict):
 		else:
 			return [pipeline(input_arg) for pipeline in pipelines]
 
+
+def null(*args, **kwargs):
+	pass
