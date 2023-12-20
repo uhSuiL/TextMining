@@ -28,6 +28,8 @@ class Pipeline(dict):
 			pipeline = Pipeline()
 			steps += callbacks
 			for step in steps:
+				if 'null' == step:
+					continue
 				args = step[1:] if type(step) is tuple else ()
 				func = step[0] if type(step) is tuple else step
 				pipeline[func] = args
@@ -42,7 +44,3 @@ class Pipeline(dict):
 			return [future.result() for future in futures]
 		else:
 			return [pipeline(input_arg) for pipeline in pipelines]
-
-
-def null(*args, **kwargs):
-	pass
