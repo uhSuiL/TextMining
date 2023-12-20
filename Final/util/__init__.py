@@ -28,6 +28,8 @@ class Pipeline(dict):
 			pipeline = Pipeline()
 			steps += callbacks
 			for step in steps:
+				if step == null:
+					continue
 				args = step[1:] if type(step) is tuple else ()
 				func = step[0] if type(step) is tuple else step
 				pipeline[func] = args
