@@ -1,4 +1,5 @@
 from itertools import product
+from typing import Hashable
 from concurrent.futures import ProcessPoolExecutor
 
 
@@ -21,8 +22,9 @@ class Pipeline(dict):
 	# 	fun11-fun21, fun11-fun22, fun12-fun21, fun12-fun22
 
 	@staticmethod
-	def from_config(config: dict, callbacks: list = None):
-		combinations = product(config.values())
+	def from_config(config: dict, callbacks: tuple = None):
+		callbacks = () if callbacks is None else callbacks
+		combinations = product(*config.values())
 
 		for steps in combinations:
 			pipeline = Pipeline()
@@ -32,6 +34,7 @@ class Pipeline(dict):
 					continue
 				args = step[1:] if type(step) is tuple else ()
 				func = step[0] if type(step) is tuple else step
+				assert isinstance(func, Hashable), func
 				pipeline[func] = args
 
 			yield pipeline
