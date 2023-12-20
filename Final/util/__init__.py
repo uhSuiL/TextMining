@@ -21,7 +21,7 @@ class Pipeline(dict):
 	# 	fun11-fun21, fun11-fun22, fun12-fun21, fun12-fun22
 
 	@staticmethod
-	def from_config(config: dict, callbacks: list = None, multiprocess: bool = True):
+	def from_config(config: dict, callbacks: list = None):
 		combinations = product(config.values())
 
 		for steps in combinations:
