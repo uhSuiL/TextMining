@@ -1,4 +1,6 @@
 import re
+
+import emoji
 from nltk.corpus import stopwords
 
 
@@ -11,7 +13,7 @@ PATTERN = {
     'uppercase': r'\b[A-Z]+\b',
     'lowercase': r'\b[a-z]+\b',
     'punc': r'[^\w\s]',
-    'emoji': r'[\U0001F300-\U0001F64F\U0001F680-\U0001F6FF\u2600-\u26FF\u2700-\u27BF]'
+    'emoji': r"&#\d+;"
 }
 
 
@@ -22,4 +24,13 @@ def remove_pattern(text: str, pattern):
 def remove_stopwords(tokens: list, stop_words: list = None):
     stop_words = STOP_WORDS if stop_words is None else stop_words
     return [token for token in tokens if token.lower() not in stop_words + ["", " "]]
+
+
+def replace_emoji(text: str):
+    text = re.sub(
+        PATTERN['emoji'],
+        lambda match:  chr(int(match.group(0)[2:-1])),
+        text
+    )
+    return emoji.demojize(text, delimiters=(' ', ' '))
 
