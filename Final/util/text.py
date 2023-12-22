@@ -21,6 +21,10 @@ def remove_pattern(text: str, pattern):
     return re.sub(pattern, "", text)
 
 
+def remove_retweet(text: str):
+    return re.sub(r'\bRT\b', '', text, flags=re.IGNORECASE)
+
+
 def remove_stopwords(tokens: list, stop_words: list = None):
     stop_words = STOP_WORDS if stop_words is None else stop_words
     return [token for token in tokens if token.lower() not in stop_words + ["", " "]]
