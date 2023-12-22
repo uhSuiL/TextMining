@@ -36,6 +36,10 @@ def count_emoji(text: str):
 	)
 
 
+def count_retweet(text: str):
+	return len(re.findall(r'\bRT\b', text, flags=re.IGNORECASE))
+
+
 def freq_dist(tokens: list):
 	dist = defaultdict(int)
 	for token in tokens:
