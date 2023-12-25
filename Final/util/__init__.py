@@ -1,17 +1,26 @@
+import platform
 from itertools import product
 from typing import Hashable
 from concurrent.futures import ProcessPoolExecutor
 
+if platform.system() == 'Windows':
+	raise RuntimeError("No Windows!!!")
 
-class Pipeline(dict):
-	def __init__(self):
+
+class Pipeline(list):
+	def __init__(self, name: str = ""):
 		"""func: args"""
 		super().__init__()
+		self.name = name
 
 	def __call__(self, input_arg):
-		for func in self.keys():
-			input_arg = func(input_arg, *self[func])
-		return input_arg
+		try:
+			for func, args in self:
+				input_arg = func(input_arg, *args)
+			return input_arg
+		except Exception as e:
+			print(e)
+			raise e
 
 	# example:
 	# 	config = {
@@ -26,6 +35,7 @@ class Pipeline(dict):
 		callbacks = () if callbacks is None else callbacks
 		combinations = product(*config.values())
 
+		pipelines = []
 		for steps in combinations:
 			pipeline = Pipeline()
 			steps += callbacks
@@ -35,9 +45,10 @@ class Pipeline(dict):
 				args = step[1:] if type(step) is tuple else ()
 				func = step[0] if type(step) is tuple else step
 				assert isinstance(func, Hashable), func
-				pipeline[func] = args
+				pipeline.append((func, args))
 
-			yield pipeline
+			pipelines.append(pipeline)
+		return pipelines
 
 	@staticmethod
 	def run_many(pipelines, input_arg, multiprocess: bool = True):

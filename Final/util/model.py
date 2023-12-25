@@ -3,6 +3,8 @@ import pandas as pd
 import json
 import os
 import re
+import scipy
+import pickle
 from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
@@ -26,7 +28,10 @@ class Sample:
 			self.y = np.delete(self.y, indices, axis=0)
 
 			# x_test = np.concatenate([x_test, self.x[indices]], axis=0)
-			x_tests.append(self.x[indices])
+			if len(self.x.shape) > 1:
+				x_tests.append(self.x[indices, :])
+			else:
+				x_tests.append(self.x[indices])
 			self.x = np.delete(self.x, indices, axis=0)
 
 		x_test = np.concatenate(x_tests, axis=0)
@@ -88,8 +93,8 @@ class Model:
 	def train(self, docs_train, label_train, validate_size, extra_features: np.ndarray = None, to_json: str = 'train'):
 		features = self.fit_transform(docs_train, label_train).toarray()
 		if extra_features is not None:
-			print(features.shape)
-			print(extra_features.shape)
+			# print(features.shape)
+			# print(extra_features.shape)
 			features = np.concatenate([features, extra_features], axis=1)
 
 		x_train, x_val, y_train, y_val = train_test_split(
@@ -113,13 +118,22 @@ class Model:
 
 	def predict(self, docs: list[str], extra_features: np.ndarray = None):
 		features = self.transform(docs, extra_features)
+		if type(features) == scipy.sparse._csr.csr_matrix:
+			features = features.toarray()
 		return self.classifier.predict(features)
 
 	def transform(self, docs, extra_features: np.ndarray = None):
 		vectors = self.vectorizer.transform(docs)
 		features = self.feature_selector.transform(vectors)
 		if extra_features is not None:
-			features = np.concatenate([features, extra_features], axis=1)
+			# print(features.shape)
+			# print(extra_features.shape)
+			# with open('./features.pkl', 'wb') as f:
+			# 	pickle.dump(features, f)
+			# with open('./extra_features', 'wb') as f:
+			# 	pickle.dump(extra_features, f)
+			# print(features)
+			features = np.concatenate([features.toarray(), extra_features], axis=1)
 		return features
 
 	def fit_transform(self, docs_train, label_train):

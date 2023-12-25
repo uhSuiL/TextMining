@@ -1,6 +1,3 @@
-from itertools import product
-from concurrent.futures import ProcessPoolExecutor
-
 import pandas as pd
 import numpy as np
 import nltk
@@ -16,6 +13,9 @@ from sklearn.metrics import recall_score, precision_score, f1_score
 from data import source_wsl, output
 from util import Pipeline, text
 from util.model import Model, Sample
+
+from itertools import product
+from concurrent.futures import ProcessPoolExecutor
 
 
 def process(tweets: pd.Series, pipeline):
@@ -38,6 +38,7 @@ def train_test2(model: Model, sample: Sample):
 	x_test, y_test = sample.pop_test(100, {0: 0.25, 1: 0.25, 2: 0.5})
 	model.train(flatten(sample.x[:, 0]), sample.y, validate_size=0.2, extra_features=sample.x[:, 1:],
 				to_json='extra feature train')
+
 	y_pred = model.predict(flatten(x_test[:, 0]), extra_features=x_test[:, 1:])
 	model.evaluate(y_true=y_test, y_pred=y_pred, to_json='extra feature eval')
 
@@ -75,13 +76,13 @@ feature_selectors = [
 
 classifiers = [
 	MultinomialNB(),
-	DecisionTreeClassifier(),
-	LinearSVC(),
-	NuSVC(kernel='poly', nu=0.1),
-	NuSVC(kernel='sigmoid', nu=0.1),
-	NuSVC(kernel='rbf', nu=0.1),
+    DecisionTreeClassifier(),
+    LinearSVC(),
+    NuSVC(kernel='poly', nu=0.1),
+    NuSVC(kernel='sigmoid', nu=0.1),
+    NuSVC(kernel='rbf', nu=0.1),
 	MLPClassifier(hidden_layer_sizes=(20, 8), activation='relu', solver='adam'),
-	MLPClassifier(hidden_layer_sizes=(60, 20, 8), activation='relu', solver='adam')
+    MLPClassifier(hidden_layer_sizes=(60, 20, 8), activation='relu', solver='adam')
 ]
 
 if __name__ == '__main__':
@@ -89,21 +90,23 @@ if __name__ == '__main__':
 
 	clean_text = process(data['tweet'], text_preprocess)
 	data = pd.concat([data, clean_text._set_name('clean text')], axis=1)
-	sample1 = Sample(data['clean text'], data['class'])
+
+	sample1 = Sample(data['clean text'].to_numpy(), data['class'].to_numpy())
 	sample2 = Sample(
-		data.loc[:, ['clean text', 'num_at', 'num_url', 'num_hashtag', 'num_retweet', 'num_exclamation', 'num_uppercase_word', 'num_lowercase_word', 'num_emoji']],
-		data['class']
+		data.loc[:,
+		['clean text', 'num_at', 'num_url', 'num_hashtag', 'num_retweet', 'num_exclamation', 'num_uppercase_word',
+		 'num_lowercase_word', 'num_emoji']].to_numpy(),
+		data['class'].to_numpy()
 	)
 
 	pool = ProcessPoolExecutor()
 	futures = []
 
-	print("start training")
+	print("Start Training")
 
 	for vectorizer, feature_selector, classifier in product(vectorizers, feature_selectors, classifiers):
 		model = Model(vectorizer, feature_selector, classifier, [recall_score, precision_score, f1_score],
 					  output + '/metrics')
-
 		futures.append(pool.submit(
 			train_test,
 			model,
